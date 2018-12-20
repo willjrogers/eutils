@@ -55,6 +55,10 @@ class PubmedArticle(eutils.xmlfacades.base.Base):
         return self._medline_citation.year
 
     @property
+    def status(self):
+        return self._medline_citation.status
+
+    @property
     def doi(self):
         return xml_get_text_or_none(self._xml_root, 'PubmedData/ArticleIdList/ArticleId[@IdType="doi"]')
 
